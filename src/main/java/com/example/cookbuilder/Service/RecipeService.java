@@ -112,38 +112,38 @@ public class RecipeService {
                 restTemplate.exchange(getRecipeByNutrientURL,HttpMethod.GET,null,new ParameterizedTypeReference<List<GetRecipeByNutrient>>(){});
         return response.getBody();
     }
-    public GetRecipeByCuisine excludeAllergies(Integer userID){
-        MyUser user = userService.getUserByID(userID);
-        Set<Allergies> allergies = allergiesRepository.findAllByUser(user);//throw exception if user didn't add allergies
-        if (allergies.isEmpty()){
-            throw new NoAllergiesFound("No allergies found for this user");
-        }
-        String allergiesURL= "";
-        for(Allergies s : allergies){
-            allergiesURL += "%20"+s.getAllergies();
-        }
+//     public GetRecipeByCuisine excludeAllergies(Integer userID){
+//         MyUser user = userService.getUserByID(userID);
+//         Set<Allergies> allergies = allergiesRepository.findAllByUser(user);//throw exception if user didn't add allergies
+//         if (allergies.isEmpty()){
+//             throw new NoAllergiesFound("No allergies found for this user");
+//         }
+//         String allergiesURL= "";
+//         for(Allergies s : allergies){
+//             allergiesURL += "%20"+s.getAllergies();
+//         }
 
 
-        String excludeAllergiesURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&excludeIngredients=";
-        ResponseEntity<GetRecipeByCuisine> response =
-                restTemplate.exchange(excludeAllergiesURL+allergiesURL,HttpMethod.GET,null,new ParameterizedTypeReference<GetRecipeByCuisine>(){});
-        return response.getBody();
-    }
-    public GetRecipeByCuisine getRecipesByCuisines(Integer userID){
-        MyUser user = userService.getUserByID(userID);
-        Set<FavoriteCuisine> favoriteCuisines = favoriteCuisineRepository.findAllByUser(user);
-        if(favoriteCuisines.isEmpty()){
-            throw new NoCuisineFound("No Favorite Cuisines found for this user");
-        }
-        String cuisineURL = "";
-        for (FavoriteCuisine favoriteCuisine: favoriteCuisines){
-            cuisineURL += "%20"+favoriteCuisine.getCuisines();
-        }
-        String baseURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&cuisine=";
-        ResponseEntity<GetRecipeByCuisine> response =
-                restTemplate.exchange(baseURL+cuisineURL,HttpMethod.GET,null,new ParameterizedTypeReference<GetRecipeByCuisine>(){});
-        return response.getBody();
-    }
+//         String excludeAllergiesURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&excludeIngredients=";
+//         ResponseEntity<GetRecipeByCuisine> response =
+//                 restTemplate.exchange(excludeAllergiesURL+allergiesURL,HttpMethod.GET,null,new ParameterizedTypeReference<GetRecipeByCuisine>(){});
+//         return response.getBody();
+//     }
+//     public GetRecipeByCuisine getRecipesByCuisines(Integer userID){
+//         MyUser user = userService.getUserByID(userID);
+//         Set<FavoriteCuisine> favoriteCuisines = favoriteCuisineRepository.findAllByUser(user);
+//         if(favoriteCuisines.isEmpty()){
+//             throw new NoCuisineFound("No Favorite Cuisines found for this user");
+//         }
+//         String cuisineURL = "";
+//         for (FavoriteCuisine favoriteCuisine: favoriteCuisines){
+//             cuisineURL += "%20"+favoriteCuisine.getCuisines();
+//         }
+//         String baseURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&cuisine=";
+//         ResponseEntity<GetRecipeByCuisine> response =
+//                 restTemplate.exchange(baseURL+cuisineURL,HttpMethod.GET,null,new ParameterizedTypeReference<GetRecipeByCuisine>(){});
+//         return response.getBody();
+//     }
     }
 
 
