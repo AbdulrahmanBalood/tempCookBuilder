@@ -50,16 +50,16 @@ public class RecipeController {
         logger.info("method getByNutrients in RecipeController used");
         return ResponseEntity.status(200).body(recipeService.getRecipeByNutrient(nutrientsList));
     }
-    @GetMapping("/user/excludeallergies/{userID}")
-    public ResponseEntity<GetRecipeByCuisine> excludeAllergies(@PathVariable Integer userID){
-        logger.info("method excludeAllergies in RecipeController used");
-        return ResponseEntity.status(200).body(recipeService.excludeAllergies(userID));
-    }
-    @GetMapping("/user/getfavcuisine/{userID}")
-    public ResponseEntity<GetRecipeByCuisine> getRecipesByCuisines(@PathVariable Integer userID){
-        logger.info("method excludeAllergies in RecipeController used");
-        return ResponseEntity.status(200).body(recipeService.getRecipesByCuisines(userID));
-    }
+//     @GetMapping("/user/excludeallergies/{userID}")
+//     public ResponseEntity<GetRecipeByCuisine> excludeAllergies(@PathVariable Integer userID){
+//         logger.info("method excludeAllergies in RecipeController used");
+//         return ResponseEntity.status(200).body(recipeService.excludeAllergies(userID));
+//     }
+//     @GetMapping("/user/getfavcuisine/{userID}")
+//     public ResponseEntity<GetRecipeByCuisine> getRecipesByCuisines(@PathVariable Integer userID){
+//         logger.info("method excludeAllergies in RecipeController used");
+//         return ResponseEntity.status(200).body(recipeService.getRecipesByCuisines(userID));
+//     }
 
 
 
