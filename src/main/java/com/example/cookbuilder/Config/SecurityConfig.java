@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/v1/recipe/recipes/**").permitAll()
                 .anyRequest().authenticated()
                 .and().formLogin()
-                .and().logout().logoutUrl("/api/v1/user/logout").logoutSuccessUrl("/api/v1/user/logout/loggedout")
+                .and().logout().logoutUrl("/api/v1/user/logout")
                 .clearAuthentication(true)
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
