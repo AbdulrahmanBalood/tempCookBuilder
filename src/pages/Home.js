@@ -19,7 +19,9 @@ import { Navigate,useParams,Link  } from "react-router-dom";
 
 export const Home = () => {
   const [recipes, setRecipes] = useState([]);
+  const [loadRecipes,setLoadRecipes] =useState(false);
   useEffect(() => {
+    if(loadRecipes){
     const getRecipes = async () => {
       const request = await fetch(
         'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random/?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20'
@@ -29,13 +31,20 @@ export const Home = () => {
       setRecipes(data.recipes);
     };
     getRecipes();
-  }, []);
+  }
+   
+  }, [loadRecipes]);
+
 
 
   return (
     <>
       
       <Flex justifyContent={'center'} alignItems="center" height={'100vh'}>
+        {!loadRecipes? (<Button onClick={()=> {
+          setLoadRecipes(true)
+          
+        }}>Load recipes</Button>):(
         <VStack>
             <Container maxW='5xl'>
           <Grid mt={'35rem'} gap={5}  templateColumns='repeat(4, 1fr)'>
@@ -57,6 +66,7 @@ export const Home = () => {
           </Grid>
           </Container>
         </VStack>
+        )}
       </Flex>
     </>
   );

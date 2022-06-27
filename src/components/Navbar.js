@@ -3,7 +3,6 @@ import {
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   Menu,
@@ -17,6 +16,8 @@ import {
 } from '@chakra-ui/react';
 import { NavLinkComp } from './NavLinkComp';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import {Link  } from "react-router-dom";
+
 export const Navbar = () => {
   const Links = ['Dashboard', 'Projects', 'Team'];
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -35,7 +36,7 @@ export const Navbar = () => {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box color={'white'}>CookBuilder</Box>
+            <Link to={"/"}><Box color={'white'}>CookBuilder</Box></Link>
             <HStack
             backgroundColor={"green.400"}
               color="white"
