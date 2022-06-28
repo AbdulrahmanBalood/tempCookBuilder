@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { NavLinkComp } from './NavLinkComp';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import {Link  } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   const Links = ['Dashboard', 'Projects', 'Team'];
@@ -36,17 +36,31 @@ export const Navbar = () => {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Link to={"/"}><Box color={'white'}>CookBuilder</Box></Link>
+            <Link to={'/'}>
+              <Box color={'white'}>CookBuilder</Box>
+            </Link>
             <HStack
-            backgroundColor={"green.400"}
+              backgroundColor={'green.400'}
               color="white"
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}
             >
-              {Links.map(link => (
+              <Link
+                to={'/search'}
+                px={2}
+                py={1}
+                rounded={'md'}
+                _hover={{
+                  textDecoration: 'none',
+                  bg: useColorModeValue('green.200'),
+                }}
+              >
+                Search
+              </Link>
+              {/* {Links.map(link => (
                 <NavLinkComp key={link}>{link}</NavLinkComp>
-              ))}
+              ))} */}
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
@@ -66,8 +80,8 @@ export const Navbar = () => {
                 />
               </MenuButton>
               <MenuList>
-           {/* Navigate here  and conditional*/}
-            {/* //////////////////////////////////////////////////////////////////////// */}
+                {/* Navigate here  and conditional*/}
+                {/* //////////////////////////////////////////////////////////////////////// */}
                 <MenuItem>Settings</MenuItem>
                 <MenuItem>Profile</MenuItem>
                 <MenuDivider />

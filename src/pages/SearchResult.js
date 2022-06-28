@@ -20,7 +20,7 @@ import RecipeContext from '../context/RecipeContext';
 
 
 export const SearchResult = () => {
-    const {searchUrl} = useContext(RecipeContext)
+    const {searchUrl,searchType} = useContext(RecipeContext)
     const [recipes, setRecipes] = useState([]);
     const [loadRecipes,setLoadRecipes] =useState(false);
     useEffect(() => {
@@ -30,7 +30,12 @@ export const SearchResult = () => {
           searchUrl
         );
         const data = await request.json();
+        if(searchType === "ByIngredient"){
         setRecipes(data);
+        }
+        if(searchType === "ByCusine"){
+            setRecipes(data.results)
+        }
       };
       getRecipes();
     }

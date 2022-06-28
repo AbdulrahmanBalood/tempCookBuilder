@@ -22,7 +22,7 @@ import RecipeContext from '../context/RecipeContext';
 
 export const SearchPage = () => {
     const Navigate = useNavigate()
-    const {searchUrl,setSearchUrl} = useContext(RecipeContext)
+    const {setSearchType,setSearchUrl} = useContext(RecipeContext)
   const [seacrhOption, setSearchOption] = useState('');
   const [optionByIngredient, setOptionByIngredient] = useState(false);
   const [optionByNutrients, setOptionByNutrients] = useState(false);
@@ -62,13 +62,15 @@ export const SearchPage = () => {
       query +
       '&number=20&limitLicense=false&ignorePantry=false&ranking=1';
     setSearchUrl(ingUrl)
+    setSearchType("ByIngredient")
     Navigate('/result')
   };
   const onClickByCusine = () => {
     let getByCuisineURL =
-      'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&cuisine=' +
+      'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20&cuisine=' +
       cuisine;
     setSearchUrl(getByCuisineURL)
+    setSearchType("ByCusine")
     Navigate('/result')
   };
   const cusineOnChange = e => {

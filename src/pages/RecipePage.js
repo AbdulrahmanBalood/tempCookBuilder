@@ -36,7 +36,7 @@ export const RecipePage = () => {
       );
       const data = await request.json();
       setRecipe(data);
-      console.log(data);
+      
       setIngredient(data.extendedIngredients);
       setDataRecived(true)
       setDiet(data.diets)
@@ -45,7 +45,6 @@ export const RecipePage = () => {
    getRecipe();
     
   }, []);
-  console.log(instructions);
   const instructionsData = () =>{
   if(instructions !== '' ){
     return (<>
