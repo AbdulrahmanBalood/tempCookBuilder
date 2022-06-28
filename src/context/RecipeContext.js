@@ -1,7 +1,20 @@
-import {useContext} from 'react'
+import { createContext, useState } from 'react';
 
-export const RecipeContext = () => {
+const RecipeContext = createContext();
+
+export const RecipeProvider = ({ children }) => {
+    const [searchUrl,setSearchUrl] = useState('')
+    const getSearchUrl = (url) => {
+        setSearchUrl(url)
+    }
+    console.log(searchUrl);
   return (
-    <div></div>
-  )
-}
+    <RecipeContext.Provider
+      value={{searchUrl,setSearchUrl}}
+    >
+      {children}
+    </RecipeContext.Provider>
+  );
+};
+
+export default RecipeContext;

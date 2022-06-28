@@ -17,6 +17,7 @@ import {Home} from './pages/Home'
 import { RecipePage } from './pages/RecipePage';
 import { Navbar } from './components/Navbar';
 import { SearchPage } from './pages/SearchPage';
+import { SearchResult } from './pages/SearchResult';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/' element={<Home></Home>} />
         <Route path='/recipe/:id' element={<RecipePage/>}/>
         <Route path='/search' element={<SearchPage/>}/>
+        <Route path='/result' element={<SearchResult/>}/>
       </Routes>
       </BrowserRouter>
     </ChakraProvider>

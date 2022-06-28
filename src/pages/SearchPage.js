@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect ,useContext} from 'react';
 import {
   ChakraProvider,
   Box,
@@ -16,9 +16,13 @@ import {
   Button,
   Select,
 } from '@chakra-ui/react';
-import { PhoneIcon, AddIcon, WarningIcon } from '@chakra-ui/icons';
+import { AddIcon } from '@chakra-ui/icons';
+import { useNavigate  } from "react-router-dom";
+import RecipeContext from '../context/RecipeContext';
 
 export const SearchPage = () => {
+    const Navigate = useNavigate()
+    const {searchUrl,setSearchUrl} = useContext(RecipeContext)
   const [seacrhOption, setSearchOption] = useState('');
   const [optionByIngredient, setOptionByIngredient] = useState(false);
   const [optionByNutrients, setOptionByNutrients] = useState(false);
@@ -56,14 +60,16 @@ export const SearchPage = () => {
       url +
       '&ingredients=' +
       query +
-      '&number=10&limitLicense=false&ignorePantry=false&ranking=1';
-    console.log(ingUrl);
+      '&number=20&limitLicense=false&ignorePantry=false&ranking=1';
+    setSearchUrl(ingUrl)
+    Navigate('/result')
   };
   const onClickByCusine = () => {
     let getByCuisineURL =
       'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&cuisine=' +
       cuisine;
-    console.log(getByCuisineURL);
+    setSearchUrl(getByCuisineURL)
+    Navigate('/result')
   };
   const cusineOnChange = e => {
     setCuisine(e.target.value);
