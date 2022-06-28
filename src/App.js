@@ -16,6 +16,7 @@ import { BrowserRouter,Route,Routes } from "react-router-dom";
 import {Home} from './pages/Home'
 import { RecipePage } from './pages/RecipePage';
 import { Navbar } from './components/Navbar';
+import { SearchPage } from './pages/SearchPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>} />
         <Route path='/recipe/:id' element={<RecipePage/>}/>
+        <Route path='/search' element={<SearchPage/>}/>
       </Routes>
       </BrowserRouter>
     </ChakraProvider>

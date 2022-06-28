@@ -66,7 +66,7 @@ export const Navbar = () => {
                 />
               </MenuButton>
               <MenuList>
-           {/* Navigate here */}
+           {/* Navigate here  and conditional*/}
             {/* //////////////////////////////////////////////////////////////////////// */}
                 <MenuItem>Settings</MenuItem>
                 <MenuItem>Profile</MenuItem>
