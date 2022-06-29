@@ -33,7 +33,7 @@ export const SearchResult = () => {
         if(searchType === "ByIngredient"){
         setRecipes(data);
         }
-        if(searchType === "ByCusine"){
+        if(searchType === "ByCusine" || searchType === "ByDiet" ){
             setRecipes(data.results)
         }
       };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useContext } from 'react';
 import { Navbar } from '../components/Navbar';
 import { Navigate, useParams } from 'react-router-dom';
 import {
@@ -21,14 +21,30 @@ import {
   Badge,
   Divider 
 } from '@chakra-ui/react';
+import RecipeContext from '../context/RecipeContext';
+import { useNavigate  } from "react-router-dom";
+
+
 export const RecipePage = () => {
   let id = useParams();
+  const Navigate = useNavigate()
+
+  const {setSearchType,setSearchUrl} = useContext(RecipeContext)
   const [recipe, setRecipe] = useState([]);
   const [ingredient, setIngredient] = useState([]);
   const [dataRecived,setDataRecived] = useState(false);
   const [diet,setDiet] = useState('')
   const [instructions,setInstructions] = useState('')
+  let newUrl = ''
 
+  const dietOnClick = () => {
+    let url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20&diet="+diet
+    newUrl = url.replace(/ /g,'%20')
+    console.log(newUrl);
+    setSearchUrl(newUrl)
+    setSearchType("ByDiet")
+    Navigate('/result')
+  }
   useEffect(() => {
     const getRecipe = async () => {
       const request = await fetch(
@@ -45,13 +61,14 @@ export const RecipePage = () => {
    getRecipe();
     
   }, []);
+  
   const instructionsData = () =>{
   if(instructions !== '' ){
     return (<>
     <Text fontWeight={'bold'} fontSize='3xl'>Instructions:</Text>
      {instructions} </>);
   }else{
-    return 'No instructions avalible'
+    return <Text fontWeight={'bold'} fontSize='3xl'>No Instructions avalible</Text>
   }
 }
   if(dataRecived)
@@ -61,9 +78,10 @@ export const RecipePage = () => {
       <Text fontSize="5xl"> {recipe.title}</Text>
       <Stack  direction={['column', 'row']} spacing='10px'>
 
-        {diet.map((diet)=> {
+        {diet.map((diet,index)=> {
+          
           return(
-            <Badge colorScheme="green">{diet}</Badge>
+            <Badge key={index} colorScheme="green"><button onClick={dietOnClick}>{diet}</button></Badge>
           )
         })}
 
@@ -89,15 +107,15 @@ export const RecipePage = () => {
       <OrderedList>
         {ingredient.map((ingredient, index) => {
           return (
-            < >
-              <ListItem>
+            
+              <ListItem key={index}>
                 <Text >
                 <strong>{ingredient.name} </strong>: {ingredient.measures.metric.amount}  {ingredient.measures.metric.unitLong}
                 </Text>
                </ListItem>
 
               
-            </>
+            
           );
         })}
       </OrderedList>
