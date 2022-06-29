@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,28 +18,32 @@ import java.util.Set;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/user")
+@RequestMapping("api/v1/auth")
+@CrossOrigin(origins = "*")
+
 public class UserController {
     private final UserService userService;
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @GetMapping("/admin/getusers")
+
     public ResponseEntity<List<MyUser>> getUsers(){
         logger.info("method getUsers in UserController used");
         return ResponseEntity.status(200).body(userService.getUsers());
     }
     @PostMapping("/register")
+    //@PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public ResponseEntity<ResponseAPI> addUser(@RequestBody @Valid MyUser user){
         logger.info("method addUser in UserController used");
         userService.addUser(user);
         return ResponseEntity.status(201).body(new ResponseAPI("User added",201));
     }
-    @PutMapping("/admin/updateuser")
-    public ResponseEntity<ResponseAPI> updateUser(@RequestBody @Valid UpdateUserDTO updateUserDTO){
-        logger.info("method updateUser in UserController used");
-        userService.updateUser(updateUserDTO);
-        return ResponseEntity.status(201).body(new ResponseAPI("User updated",201));
-    }
+//    @PutMapping("/admin/updateuser")
+//    public ResponseEntity<ResponseAPI> updateUser(@RequestBody @Valid UpdateUserDTO updateUserDTO){
+//        logger.info("method updateUser in UserController used");
+//        userService.updateUser(updateUserDTO);
+//        return ResponseEntity.status(201).body(new ResponseAPI("User updated",201));
+//    }
     @DeleteMapping("/admin/deleteuser/{userID}")
     public ResponseEntity<ResponseAPI> deleteUser(@PathVariable Integer userID){
         logger.info("method deleteUser in UserController used");

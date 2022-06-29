@@ -30,17 +30,25 @@ public class RecipeService {
     private final RestTemplate restTemplate;
     private final AllergiesRepository allergiesRepository;
     private final FavoriteCuisineRepository favoriteCuisineRepository;
-    public List<RecipeByIngredient> getByIngredient(IngredientsList ing){
+    public GetHomePageRecipes loadHomePageRecipe(){
+        String url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random/?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20";
+        ResponseEntity<GetHomePageRecipes> response = restTemplate.exchange(url,
+                HttpMethod.GET, null, new ParameterizedTypeReference<GetHomePageRecipes>() {
+                });
+        return response.getBody();
+    }
+    public List<RecipeByIngredient> getByIngredient(List<String> ing){
         String params = "";
         String base_url="https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89";
 
-        params+=ing.getIngredients().get(0);
+        params+=ing.get(0);
 
-        for (int i = 1; i < ing.getIngredients().size();i++){
-            params+="%2C"+ing.getIngredients().get(i);
+        for (int i = 1; i < ing.size();i++){
+            params+="%2C"+ing.get(i);
         }
 
         String findByIngredient = "&ingredients="+params+"&number=10&limitLicense=false&ignorePantry=false&ranking=1";
+        System.out.println(findByIngredient);
         ResponseEntity<List<RecipeByIngredient>> recipe =
                 restTemplate.exchange(base_url+findByIngredient,
                         HttpMethod.GET, null, new ParameterizedTypeReference<List<RecipeByIngredient>>() {
@@ -59,10 +67,10 @@ public class RecipeService {
     public GetRecipeByCuisine getRecipeByDiet(String diet) {
         String getByDietURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&diet="+
                 diet;
-
-        if(!(diet.toLowerCase().equals("pescetarian")||diet.toLowerCase().equals("lacto vegetarian")||
-                diet.toLowerCase().equals("ovo vegetarian")||diet.toLowerCase().equals("vegan")||diet.toLowerCase().equals("paleo")
-                ||diet.toLowerCase().equals("primal")||diet.toLowerCase().equals("vegetarian"))){
+        System.out.println(diet);
+        if(!(diet.toLowerCase().equals("pescetarian")||diet.toLowerCase().equals("lacto ovo vegetarian")||diet.toLowerCase().equals("vegan")||diet.toLowerCase().equals("paleo")
+                ||diet.toLowerCase().equals("primal")||diet.toLowerCase().equals("vegetarian")||diet.toLowerCase().equals("whole30")
+                ||diet.toLowerCase().equals("ketogenic")||diet.toLowerCase().equals("gluten free")||diet.toLowerCase().equals("fodmap friendly")||diet.toLowerCase().equals("dairy free"))){
             throw new DietTypeException("Diet type must be :pescetarian, lacto vegetarian, ovo vegetarian, vegan, paleo, primal, or vegetarian");
         }
         ResponseEntity<GetRecipeByCuisine> response =

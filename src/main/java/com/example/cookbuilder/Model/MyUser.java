@@ -15,23 +15,32 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import java.util.*;
 
-@AllArgsConstructor @NoArgsConstructor @Setter @Getter
+ @NoArgsConstructor @Setter @Getter
 @Entity
 public class MyUser implements UserDetails {
-    @Id
+     public MyUser(Integer id, String username, String password, String role, List<FavoriteRecipe> favoriteRecipes, List<Allergies> allergies, List<FavoriteCuisine> favoriteCuisines) {
+         this.id = id;
+         this.username = username;
+//         this.email = email;
+         this.password = password;
+         this.role = "USER";
+         this.favoriteRecipes = favoriteRecipes;
+         this.allergies = allergies;
+         this.favoriteCuisines = favoriteCuisines;
+     }
+
+     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(unique = true)
     @NotEmpty(message = "Username cannot be empty")
     private String username;
     @Column(unique = true)
-    @Email(message = "Email must be in an email format")
-    @NotEmpty(message = "email cannot be empty")
-    private String email;
+//    @Email(message = "Email must be in an email format")
+//    @NotEmpty(message = "email cannot be empty")
+//    private String email;
     @NotEmpty(message = "password cannot be empty")
     private String password;
-    @Pattern(regexp = "(USER|ADMIN)",message = "user has to be ADMIN or USER")
-    @NotEmpty(message = "role cannot be empty")
     private String role;
 
         @OneToMany(mappedBy = "user")

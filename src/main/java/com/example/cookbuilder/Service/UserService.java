@@ -40,14 +40,14 @@ public class UserService {
         MyUser user = userRepository.getMyUserByEmail(email);
         return user;
     }
-    public void updateUser(UpdateUserDTO updateUserDTO){
-        MyUser user = getUserByEmail(updateUserDTO.getCurrentEmail());
-        user.setUsername(updateUserDTO.getUsername());
-        user.setEmail(updateUserDTO.getEmail());
-        String hashPass = new BCryptPasswordEncoder().encode(user.getPassword());
-        user.setPassword(hashPass);
-        userRepository.save(user);
-    }
+//    public void updateUser(UpdateUserDTO updateUserDTO){
+//        MyUser user = getUserByEmail(updateUserDTO.getCurrentEmail());
+//        user.setUsername(updateUserDTO.getUsername());
+////        user.setEmail(updateUserDTO.getEmail());
+//        String hashPass = new BCryptPasswordEncoder().encode(user.getPassword());
+//        user.setPassword(hashPass);
+//        userRepository.save(user);
+//    }
     public void deleteUser(Integer userID){
         MyUser user = getUserByID(userID);
         userRepository.delete(user);

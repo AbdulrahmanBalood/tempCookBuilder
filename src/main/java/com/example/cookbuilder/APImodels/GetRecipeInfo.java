@@ -42,6 +42,8 @@ public class GetRecipeInfo {
     private List<AnalyzedInstruction> analyzedInstructions = null;
     @JsonProperty("originalId")
     private Object originalId;
+    private List<ExtendedIngredient> extendedIngredients = null;
+
 
 
 }

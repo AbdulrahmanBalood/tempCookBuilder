@@ -16,14 +16,20 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/recipe")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class RecipeController {
     Logger logger = LoggerFactory.getLogger(RecipeController.class);
     private final RecipeService recipeService;
     @GetMapping("/recipes/findbyingredients")
-    public ResponseEntity<List<RecipeByIngredient>> getByIngredient(@RequestBody IngredientsList ingredients){
+    public ResponseEntity<List<RecipeByIngredient>> getByIngredient(@RequestParam List<String> ingredients){
         logger.info("method getByIngredient in RecipeController used");
         List<RecipeByIngredient> response = recipeService.getByIngredient(ingredients);
         return ResponseEntity.status(200).body(response);
+    }
+    @GetMapping("/recipes/homepage")
+    public ResponseEntity<GetHomePageRecipes> loadHomePageRecipe (){
+        logger.info("method loadHomePageRecipe in RecipeController used");
+        return ResponseEntity.status(200).body(recipeService.loadHomePageRecipe());
     }
     @GetMapping("/recipes/findbycuisine/{cuisine}")
     public ResponseEntity<GetRecipeByCuisine> getRecipeByCuisine(@PathVariable String cuisine){
