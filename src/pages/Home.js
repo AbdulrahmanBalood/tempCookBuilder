@@ -23,13 +23,14 @@ export const Home = () => {
   const [loadRecipes, setLoadRecipes] = useState(false);
 
   useEffect(() => {
+
+    
     if (loadRecipes) {
       const getRecipes = async () => {
         const request = await fetch(
-          'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random/?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20'
+          '/api/v1/recipe/recipes/homepage'
         );
         const data = await request.json();
-        console.log(data.recipes);
         setRecipes(data.recipes);
         setSearchType('homepage');
               

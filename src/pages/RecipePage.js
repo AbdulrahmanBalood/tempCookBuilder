@@ -37,18 +37,19 @@ export const RecipePage = () => {
   const [instructions,setInstructions] = useState('')
   let newUrl = ''
 
-  const dietOnClick = () => {
-    let url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20&diet="+diet
-    newUrl = url.replace(/ /g,'%20')
-    console.log(newUrl);
-    setSearchUrl(newUrl)
-    setSearchType("ByDiet")
-    Navigate('/result')
-  }
+//   const dietOnClick = () => {
+//     let url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20&diet="+diet
+//     console.log(diet);
+//     newUrl = url.replace(/ /g,'%20')
+//     console.log(newUrl);
+//     setSearchUrl(newUrl)
+//     setSearchType("ByDiet")
+//     // Navigate('/result')
+//   }
   useEffect(() => {
     const getRecipe = async () => {
       const request = await fetch(
-        `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id.id}/information/?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89`
+        `/api/v1/recipe/user/getrecipeinfo/${id.id}`
       );
       const data = await request.json();
       setRecipe(data);
@@ -81,7 +82,15 @@ export const RecipePage = () => {
         {diet.map((diet,index)=> {
           
           return(
-            <Badge key={index} colorScheme="green"><button onClick={dietOnClick}>{diet}</button></Badge>
+            <Badge key={index} colorScheme="green"><button onClick={() => {
+                let url = "/api/v1/recipe/recipes/findbydiet/"+diet
+                console.log(diet);
+                newUrl = url.replace(/ /g,'%20')
+                console.log(newUrl);
+                setSearchUrl(newUrl)
+                setSearchType("ByDiet")
+                Navigate('/result')
+              }}>{diet}</button></Badge>
           )
         })}
 

@@ -26,9 +26,11 @@ export const SearchResult = () => {
     useEffect(() => {
       if(loadRecipes){
       const getRecipes = async () => {
+        console.log(searchUrl);
         const request = await fetch(
-          searchUrl
+         "http://localhost:8080"+searchUrl
         );
+        console.log(request);
         const data = await request.json();
         if(searchType === "ByIngredient"){
         setRecipes(data);

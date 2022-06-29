@@ -3,6 +3,7 @@ import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import App from './App';
 import {RecipeProvider} from './context/RecipeContext';
+import { AuthProvider } from './context/AuthContext';
 
 
 
@@ -13,9 +14,11 @@ root.render(
   <>
  
     <ColorModeScript />
+    <AuthProvider>
     <RecipeProvider>
     <App />
     </RecipeProvider>
+    </AuthProvider>
   </>
 );
 

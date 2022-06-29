@@ -18,6 +18,8 @@ import { RecipePage } from './pages/RecipePage';
 import { Navbar } from './components/Navbar';
 import { SearchPage } from './pages/SearchPage';
 import { SearchResult } from './pages/SearchResult';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>} />
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
         <Route path='/recipe/:id' element={<RecipePage/>}/>
         <Route path='/search' element={<SearchPage/>}/>
         <Route path='/result' element={<SearchResult/>}/>

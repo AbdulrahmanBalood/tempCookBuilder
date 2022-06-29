@@ -30,7 +30,6 @@ export const RecipeCard = () => {
         <Container maxW='5xl'>
       <Grid mt={'35rem'} gap={5}  templateColumns='repeat(4, 1fr)'>
         {recipes.map((recipe, index) => {
-          // console.log();
           return (
             <GridItem w="100%" mb={'13px'} key={index}>
               <Image

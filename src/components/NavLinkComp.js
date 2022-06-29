@@ -16,7 +16,8 @@ import {
     useColorModeValue,
     Stack,
   } from '@chakra-ui/react';
-export const NavLinkComp = ({children}) => {
+export const NavLinkComp = ({children,toValue}) => {
+  console.log(children);
   return (
     <Link
     px={2}
@@ -26,7 +27,7 @@ export const NavLinkComp = ({children}) => {
       textDecoration: 'none',
       bg: useColorModeValue('green.300'),
     }}
-    href={'#'}>
+    href={toValue}>
     {children}
   </Link>
   )

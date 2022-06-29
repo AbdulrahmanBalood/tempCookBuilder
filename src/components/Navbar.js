@@ -13,15 +13,16 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Text
 } from '@chakra-ui/react';
 import { NavLinkComp } from './NavLinkComp';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
+import profile from '../images/profile.png'
 
 export const Navbar = () => {
-  const Links = ['Dashboard', 'Projects', 'Team'];
+  const Links = [{lable:'Search',value:"/search"}];
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <>
       <Box bg={useColorModeValue('green.400')} px={4}>
@@ -46,21 +47,10 @@ export const Navbar = () => {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}
             >
-              <Link
-                to={'/search'}
-                px={2}
-                py={1}
-                rounded={'md'}
-                _hover={{
-                  textDecoration: 'none',
-                  bg: useColorModeValue('green.200'),
-                }}
-              >
-                Search
-              </Link>
-              {/* {Links.map(link => (
-                <NavLinkComp key={link}>{link}</NavLinkComp>
-              ))} */}
+
+              {Links.map((link,index) => (
+                <NavLinkComp toValue = {link.value} key={index}>{link.lable}</NavLinkComp>
+              ))}
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
@@ -74,8 +64,9 @@ export const Navbar = () => {
               >
                 <Avatar
                   size={'sm'}
+                  backgroundColor="green.400"
                   src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
+                    profile
                   }
                 />
               </MenuButton>
