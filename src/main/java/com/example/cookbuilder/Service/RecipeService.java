@@ -39,7 +39,7 @@ public class RecipeService {
     }
     public List<RecipeByIngredient> getByIngredient(List<String> ing){
         String params = "";
-        String base_url="https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89";
+        String base_url="https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20";
 
         params+=ing.get(0);
 
@@ -56,7 +56,7 @@ public class RecipeService {
         return recipe.getBody();
     }
     public GetRecipeByCuisine getRecipeByCuisine(String cuisine){
-        String getByCuisineURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&cuisine="+
+        String getByCuisineURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20&cuisine="+
                 cuisine;
         ResponseEntity<GetRecipeByCuisine> response =
                 restTemplate.exchange(getByCuisineURL,HttpMethod.GET,null,new ParameterizedTypeReference<GetRecipeByCuisine>(){});
@@ -65,7 +65,7 @@ public class RecipeService {
 
 
     public GetRecipeByCuisine getRecipeByDiet(String diet) {
-        String getByDietURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&diet="+
+        String getByDietURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?rapidapi-key=a6d0f4d8b2msh280a35f3b5593c5p1ce801jsn5c75cf02ac89&number=20&diet="+
                 diet;
         System.out.println(diet);
         if(!(diet.toLowerCase().equals("pescetarian")||diet.toLowerCase().equals("lacto ovo vegetarian")||diet.toLowerCase().equals("vegan")||diet.toLowerCase().equals("paleo")

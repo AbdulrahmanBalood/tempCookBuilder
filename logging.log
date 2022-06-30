@@ -985,3 +985,871 @@
 2022-06-30 09:27:33.087  INFO 27732 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-06-30 09:27:33.092  INFO 27732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-06-30 09:27:33.098  INFO 27732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-30 10:17:26.962  INFO 12468 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 12468 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 10:17:26.964  INFO 12468 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 10:17:28.030  INFO 12468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 10:17:28.175  INFO 12468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 124 ms. Found 4 JPA repository interfaces.
+2022-06-30 10:17:28.802  INFO 12468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 10:17:28.814  INFO 12468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 10:17:28.815  INFO 12468 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 10:17:28.945  INFO 12468 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 10:17:28.945  INFO 12468 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1928 ms
+2022-06-30 10:17:29.091  INFO 12468 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 10:17:29.139  INFO 12468 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 10:17:29.310  INFO 12468 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 10:17:29.435  INFO 12468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 10:17:30.908 ERROR 12468 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.example.cookbuilder.CookBuilderApplication.main(CookBuilderApplication.java:12) ~[classes/:na]
+
+2022-06-30 10:17:30.911  WARN 12468 --- [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.example.cookbuilder.CookBuilderApplication.main(CookBuilderApplication.java:12) ~[classes/:na]
+
+2022-06-30 10:17:30.930  INFO 12468 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 10:17:31.634  INFO 12468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 10:17:32.663 ERROR 12468 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:44) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:64) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:559) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:68) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:220) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:196) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.example.cookbuilder.CookBuilderApplication.main(CookBuilderApplication.java:12) ~[classes/:na]
+
+2022-06-30 10:17:32.665  WARN 12468 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2022-06-30 10:17:32.666 ERROR 12468 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
+2022-06-30 10:17:32.675 ERROR 12468 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2022-06-30 10:17:32.679  WARN 12468 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2022-06-30 10:17:37.067  INFO 25136 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 25136 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 10:17:37.070  INFO 25136 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 10:17:38.546  INFO 25136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 10:17:38.842  INFO 25136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 276 ms. Found 4 JPA repository interfaces.
+2022-06-30 10:17:39.607  INFO 25136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 10:17:39.620  INFO 25136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 10:17:39.621  INFO 25136 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 10:17:39.744  INFO 25136 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 10:17:39.744  INFO 25136 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2577 ms
+2022-06-30 10:17:39.904  INFO 25136 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 10:17:39.964  INFO 25136 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 10:17:40.173  INFO 25136 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 10:17:40.263  INFO 25136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 10:17:40.738  INFO 25136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-30 10:17:40.761  INFO 25136 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 10:17:41.706  INFO 25136 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-30 10:17:41.713  INFO 25136 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:17:42.039  WARN 25136 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-30 10:17:42.303  INFO 25136 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@750c23a3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@238280df, org.springframework.security.web.context.SecurityContextPersistenceFilter@102fd71d, org.springframework.security.web.header.HeaderWriterFilter@5c7e55a4, org.springframework.web.filter.CorsFilter@182fd26b, org.springframework.security.web.authentication.logout.LogoutFilter@550f522b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@50f13494, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@464d60fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2de96eba, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5dc120ab, org.springframework.security.web.session.SessionManagementFilter@5a3be84, org.springframework.security.web.access.ExceptionTranslationFilter@65c689e7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@44c2e8a8]
+2022-06-30 10:17:42.654  INFO 25136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-30 10:17:42.665  INFO 25136 --- [main] c.e.cookbuilder.CookBuilderApplication   : Started CookBuilderApplication in 6.264 seconds (JVM running for 7.19)
+2022-06-30 10:18:02.831  INFO 25136 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-30 10:18:02.831  INFO 25136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-30 10:18:02.834  INFO 25136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-06-30 10:20:05.018  INFO 25136 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:20:05.027  INFO 25136 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-30 10:20:05.050  INFO 25136 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-30 10:20:12.212  INFO 16524 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 16524 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 10:20:12.215  INFO 16524 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 10:20:13.075  INFO 16524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 10:20:13.184  INFO 16524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 4 JPA repository interfaces.
+2022-06-30 10:20:13.876  INFO 16524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 10:20:13.892  INFO 16524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 10:20:13.892  INFO 16524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 10:20:14.037  INFO 16524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 10:20:14.039  INFO 16524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1756 ms
+2022-06-30 10:20:14.209  INFO 16524 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 10:20:14.292  INFO 16524 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 10:20:14.516  INFO 16524 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 10:20:14.611  INFO 16524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 10:20:15.181  INFO 16524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-30 10:20:15.197  INFO 16524 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 10:20:16.199  INFO 16524 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-30 10:20:16.204  INFO 16524 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:20:16.526  WARN 16524 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-30 10:20:16.743  INFO 16524 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@abf1816, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e1e7bc6, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a654e05, org.springframework.security.web.header.HeaderWriterFilter@4850d66b, org.springframework.web.filter.CorsFilter@7bd1098, org.springframework.security.web.authentication.logout.LogoutFilter@a5d23c9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@259c6ab8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d946eee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d3990a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@185bf6e0, org.springframework.security.web.session.SessionManagementFilter@2c7c898a, org.springframework.security.web.access.ExceptionTranslationFilter@1cca2e9d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3879feec]
+2022-06-30 10:20:17.072  INFO 16524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-30 10:20:17.089  INFO 16524 --- [main] c.e.cookbuilder.CookBuilderApplication   : Started CookBuilderApplication in 5.408 seconds (JVM running for 6.483)
+2022-06-30 10:20:28.307  INFO 16524 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-30 10:20:28.307  INFO 16524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-30 10:20:28.314  INFO 16524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-06-30 10:21:33.135  INFO 16524 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:21:33.139  INFO 16524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-30 10:21:33.152  INFO 16524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-30 10:21:38.959  INFO 24548 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 24548 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 10:21:38.964  INFO 24548 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 10:21:39.723  INFO 24548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 10:21:39.806  INFO 24548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 4 JPA repository interfaces.
+2022-06-30 10:21:40.324  INFO 24548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 10:21:40.333  INFO 24548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 10:21:40.333  INFO 24548 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 10:21:40.445  INFO 24548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 10:21:40.446  INFO 24548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1415 ms
+2022-06-30 10:21:40.729  INFO 24548 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 10:21:40.777  INFO 24548 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 10:21:40.958  INFO 24548 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 10:21:41.055  INFO 24548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 10:21:41.490  INFO 24548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-30 10:21:41.502  INFO 24548 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 10:21:42.386  INFO 24548 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-30 10:21:42.397  INFO 24548 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:21:42.799  WARN 24548 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-30 10:21:43.060  INFO 24548 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4c3d72fd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@259c6ab8, org.springframework.security.web.context.SecurityContextPersistenceFilter@22846a1d, org.springframework.security.web.header.HeaderWriterFilter@1999e1f5, org.springframework.web.filter.CorsFilter@640a6d4b, org.springframework.security.web.authentication.logout.LogoutFilter@69cb134, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@750c23a3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6167c42f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cae4518, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1238a074, org.springframework.security.web.session.SessionManagementFilter@464d60fb, org.springframework.security.web.access.ExceptionTranslationFilter@7ae6927, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5dd227b7]
+2022-06-30 10:21:43.433  INFO 24548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-30 10:21:43.442  INFO 24548 --- [main] c.e.cookbuilder.CookBuilderApplication   : Started CookBuilderApplication in 4.954 seconds (JVM running for 6.015)
+2022-06-30 10:21:47.068  INFO 24548 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-30 10:21:47.068  INFO 24548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-30 10:21:47.068  INFO 24548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-06-30 10:23:12.616  INFO 24548 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:23:12.629  INFO 24548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-30 10:23:12.653  INFO 24548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-30 10:23:20.592  INFO 31316 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 31316 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 10:23:20.597  INFO 31316 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 10:23:21.765  INFO 31316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 10:23:21.881  INFO 31316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 4 JPA repository interfaces.
+2022-06-30 10:23:22.697  INFO 31316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 10:23:22.713  INFO 31316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 10:23:22.714  INFO 31316 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 10:23:22.913  INFO 31316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 10:23:22.913  INFO 31316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2229 ms
+2022-06-30 10:23:23.164  INFO 31316 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 10:23:23.243  INFO 31316 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 10:23:23.506  INFO 31316 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 10:23:23.659  INFO 31316 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 10:23:24.265  INFO 31316 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-30 10:23:24.302  INFO 31316 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 10:23:26.172  INFO 31316 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-30 10:23:26.191  INFO 31316 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:23:26.764  WARN 31316 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-30 10:23:27.290  INFO 31316 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@280c3dc0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f89ad03, org.springframework.security.web.context.SecurityContextPersistenceFilter@68543a35, org.springframework.security.web.header.HeaderWriterFilter@55574295, org.springframework.web.filter.CorsFilter@f287a4e, org.springframework.security.web.authentication.logout.LogoutFilter@4d3990a5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@39420d59, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77d3c3d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@464d60fb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3879feec, org.springframework.security.web.session.SessionManagementFilter@77307b51, org.springframework.security.web.access.ExceptionTranslationFilter@3703a400, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51566ce0]
+2022-06-30 10:23:27.789  INFO 31316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-30 10:23:27.807  INFO 31316 --- [main] c.e.cookbuilder.CookBuilderApplication   : Started CookBuilderApplication in 7.885 seconds (JVM running for 9.316)
+2022-06-30 10:27:57.489  INFO 31316 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:27:57.553  INFO 31316 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-30 10:27:57.628  INFO 31316 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-30 10:28:00.831  INFO 15068 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 15068 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 10:28:00.834  INFO 15068 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 10:28:01.314  INFO 15068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 10:28:01.380  INFO 15068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2022-06-30 10:28:01.779  INFO 15068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 10:28:01.788  INFO 15068 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 10:28:01.788  INFO 15068 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 10:28:01.909  INFO 15068 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 10:28:01.910  INFO 15068 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1043 ms
+2022-06-30 10:28:02.029  INFO 15068 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 10:28:02.088  INFO 15068 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 10:28:02.260  INFO 15068 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 10:28:02.350  INFO 15068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 10:28:02.729  INFO 15068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-30 10:28:02.744  INFO 15068 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 10:28:03.515  INFO 15068 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-30 10:28:03.528  INFO 15068 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:28:03.837  WARN 15068 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-30 10:28:04.036  INFO 15068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1cdad619, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@319058ce, org.springframework.security.web.context.SecurityContextPersistenceFilter@270097ce, org.springframework.security.web.header.HeaderWriterFilter@6d946eee, org.springframework.web.filter.CorsFilter@3909308c, org.springframework.security.web.authentication.logout.LogoutFilter@b5311cb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@185bf6e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69cb134, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@29e3c28, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71cc0e35, org.springframework.security.web.session.SessionManagementFilter@550f522b, org.springframework.security.web.access.ExceptionTranslationFilter@4a86be01, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5bf1b528]
+2022-06-30 10:28:04.406  INFO 15068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-30 10:28:04.419  INFO 15068 --- [main] c.e.cookbuilder.CookBuilderApplication   : Started CookBuilderApplication in 3.863 seconds (JVM running for 4.408)
+2022-06-30 10:28:32.244  INFO 15068 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:28:32.247  INFO 15068 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-30 10:28:32.264  INFO 15068 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-30 10:28:36.707  INFO 26356 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 26356 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 10:28:36.710  INFO 26356 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 10:28:37.281  INFO 26356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 10:28:37.352  INFO 26356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
+2022-06-30 10:28:37.756  INFO 26356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 10:28:37.768  INFO 26356 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 10:28:37.768  INFO 26356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 10:28:37.881  INFO 26356 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 10:28:37.882  INFO 26356 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1136 ms
+2022-06-30 10:28:38.026  INFO 26356 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 10:28:38.068  INFO 26356 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 10:28:38.176  INFO 26356 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 10:28:38.237  INFO 26356 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 10:28:38.565  INFO 26356 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-30 10:28:38.573  INFO 26356 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 10:28:39.134  INFO 26356 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-30 10:28:39.139  INFO 26356 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:28:39.388  WARN 26356 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-30 10:28:39.568  INFO 26356 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f365a26, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44a9971f, org.springframework.security.web.context.SecurityContextPersistenceFilter@550f522b, org.springframework.security.web.header.HeaderWriterFilter@3cae4518, org.springframework.web.filter.CorsFilter@2e2cd42c, org.springframework.security.web.authentication.logout.LogoutFilter@6c1a63f7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@abf1816, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a7fc4c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52b30dcd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cdad619, org.springframework.security.web.session.SessionManagementFilter@6065bcb7, org.springframework.security.web.access.ExceptionTranslationFilter@3ef914f5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73c09a98]
+2022-06-30 10:28:39.845  INFO 26356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-30 10:28:39.855  INFO 26356 --- [main] c.e.cookbuilder.CookBuilderApplication   : Started CookBuilderApplication in 3.438 seconds (JVM running for 3.969)
+2022-06-30 10:28:53.363  INFO 26356 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-30 10:28:53.363  INFO 26356 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-30 10:28:53.364  INFO 26356 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-06-30 10:28:54.682  INFO 26356 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 10:28:54.945 ERROR 26356 --- [http-nio-8080-exec-3] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 10:29:05.576  INFO 26356 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:34:39.767  INFO 26356 --- [http-nio-8080-exec-5] c.e.c.Controller.UserController          : method addUser in UserController used
+2022-06-30 10:34:47.667  INFO 26356 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 10:34:55.175  INFO 26356 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:35:11.326  INFO 26356 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:37:12.972  INFO 26356 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:37:13.010  INFO 26356 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:38:38.826  INFO 26356 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:38:38.845  INFO 26356 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-30 10:38:38.874  INFO 26356 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-30 10:38:42.465  INFO 21932 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 21932 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 10:38:42.467  INFO 21932 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 10:38:43.076  INFO 21932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 10:38:43.174  INFO 21932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 4 JPA repository interfaces.
+2022-06-30 10:38:43.690  INFO 21932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 10:38:43.700  INFO 21932 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 10:38:43.701  INFO 21932 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 10:38:43.843  INFO 21932 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 10:38:43.844  INFO 21932 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1336 ms
+2022-06-30 10:38:44.045  INFO 21932 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 10:38:44.126  INFO 21932 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 10:38:44.316  INFO 21932 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 10:38:44.453  INFO 21932 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 10:38:44.959  INFO 21932 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-30 10:38:44.979  INFO 21932 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 10:38:45.762  INFO 21932 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-30 10:38:45.770  INFO 21932 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 10:38:46.064  WARN 21932 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-30 10:38:46.259  INFO 21932 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f365a26, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44a9971f, org.springframework.security.web.context.SecurityContextPersistenceFilter@550f522b, org.springframework.security.web.header.HeaderWriterFilter@3cae4518, org.springframework.web.filter.CorsFilter@2e2cd42c, org.springframework.security.web.authentication.logout.LogoutFilter@6c1a63f7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@abf1816, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a7fc4c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52b30dcd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cdad619, org.springframework.security.web.session.SessionManagementFilter@6065bcb7, org.springframework.security.web.access.ExceptionTranslationFilter@3ef914f5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73c09a98]
+2022-06-30 10:38:46.558  INFO 21932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-30 10:38:46.567  INFO 21932 --- [main] c.e.cookbuilder.CookBuilderApplication   : Started CookBuilderApplication in 4.426 seconds (JVM running for 5.197)
+2022-06-30 10:40:28.118  INFO 21932 --- [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-30 10:40:28.119  INFO 21932 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-30 10:40:28.130  INFO 21932 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2022-06-30 10:40:28.206  INFO 21932 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 10:41:02.930  INFO 21932 --- [http-nio-8080-exec-2] c.e.c.Controller.UserController          : method addUser in UserController used
+2022-06-30 10:41:55.727  INFO 21932 --- [http-nio-8080-exec-7] c.e.c.Controller.UserController          : method addUser in UserController used
+2022-06-30 10:41:58.929  INFO 21932 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 10:42:02.342  INFO 21932 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:42:02.767  INFO 21932 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:42:22.540  INFO 21932 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:46:10.955  INFO 21932 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:46:11.052  INFO 21932 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:46:18.196  INFO 21932 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:46:18.207  INFO 21932 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:46:23.951  INFO 21932 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:46:24.264  INFO 21932 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:46:27.153  INFO 21932 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:46:27.964  INFO 21932 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:46:33.180  INFO 21932 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:49:05.226  INFO 21932 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:54:27.863  INFO 21932 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:54:45.120  INFO 21932 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 10:55:11.775  INFO 21932 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getByIngredient in RecipeController used
+2022-06-30 10:55:17.223  INFO 21932 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 10:55:24.042  INFO 21932 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 10:59:42.347  INFO 21932 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:03:55.938  INFO 21932 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:07:26.668  INFO 21932 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:08:44.190  INFO 21932 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:10:13.103  INFO 21932 --- [http-nio-8080-exec-7] c.e.c.Controller.UserController          : method addFavRecipe in UserController used
+2022-06-30 11:10:14.290  INFO 21932 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:10:22.563  INFO 21932 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:10:24.652  INFO 21932 --- [http-nio-8080-exec-5] c.e.c.Controller.UserController          : method addFavRecipe in UserController used
+2022-06-30 11:10:44.922  INFO 21932 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:10:48.824 ERROR 21932 --- [http-nio-8080-exec-4] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:10:49.068 ERROR 21932 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:10:49.155 ERROR 21932 --- [http-nio-8080-exec-9] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:19:08.040  WARN 21932 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m51s331ms544µs700ns).
+2022-06-30 11:20:13.633  INFO 21932 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:22:05.347  INFO 21932 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:22:13.607  INFO 21932 --- [http-nio-8080-exec-5] c.e.c.Controller.UserController          : method addFavRecipe in UserController used
+2022-06-30 11:22:16.788  INFO 21932 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:22:29.796  INFO 21932 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:23:08.320  INFO 21932 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:24:07.454  INFO 21932 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:24:07.508  INFO 21932 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:24:07.519  INFO 21932 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:24:10.541  INFO 21932 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:24:19.171  INFO 21932 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:24:23.267  INFO 21932 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:24:25.304  INFO 21932 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeByDiet in RecipeController used
+2022-06-30 11:26:14.295  INFO 21932 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 11:26:14.312  INFO 21932 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-30 11:26:14.344  INFO 21932 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-30 11:26:21.205  INFO 8564 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 8564 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 11:26:21.205  INFO 8564 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 11:26:22.045  INFO 8564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 11:26:22.127  INFO 8564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 4 JPA repository interfaces.
+2022-06-30 11:26:22.753  INFO 8564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 11:26:22.761  INFO 8564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 11:26:22.761  INFO 8564 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 11:26:22.930  INFO 8564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 11:26:22.930  INFO 8564 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1671 ms
+2022-06-30 11:26:23.154  INFO 8564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 11:26:23.244  INFO 8564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 11:26:23.476  INFO 8564 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 11:26:23.580  INFO 8564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 11:26:24.222  INFO 8564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-30 11:26:24.247  INFO 8564 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 11:26:25.357  INFO 8564 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-30 11:26:25.366  INFO 8564 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 11:26:25.770  WARN 8564 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-30 11:26:26.073  INFO 8564 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@182fd26b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5dc120ab, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ef914f5, org.springframework.security.web.header.HeaderWriterFilter@68543a35, org.springframework.web.filter.CorsFilter@49c4118b, org.springframework.security.web.authentication.logout.LogoutFilter@49de1505, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6f2bf657, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c7c898a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53b907d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ef7f414, org.springframework.security.web.session.SessionManagementFilter@6167c42f, org.springframework.security.web.access.ExceptionTranslationFilter@b1fa523, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@42e4431]
+2022-06-30 11:26:26.459  INFO 8564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-30 11:26:26.476  INFO 8564 --- [main] c.e.cookbuilder.CookBuilderApplication   : Started CookBuilderApplication in 5.698 seconds (JVM running for 6.776)
+2022-06-30 11:26:40.931  INFO 8564 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-30 11:26:40.931  INFO 8564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-30 11:26:40.931  INFO 8564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-06-30 11:26:41.021  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:26:53.205  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:26:56.056  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeByDiet in RecipeController used
+2022-06-30 11:27:07.589  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.UserController          : method removeRecipe in UserController used
+2022-06-30 11:27:31.293  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.UserController          : method addUser in UserController used
+2022-06-30 11:29:35.681  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:29:37.609  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:36:56.389 ERROR 8564 --- [http-nio-8080-exec-7] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:37:05.556 ERROR 8564 --- [http-nio-8080-exec-8] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:37:17.397  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:37:25.819  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:42:23.069  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:42:23.079  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:42:23.089  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:22.061  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:22.063  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:22.099  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:26.066  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:26.068  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:26.068  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:51.104  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:52.071  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:52.073  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:43:53.803  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:10.068  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:10.075  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:10.076  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:12.005  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:12.005  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:12.010  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:22.082  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:22.085  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:22.114  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:24.051  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:24.051  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:24.084  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:26.054  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:26.054  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:26.054  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:33.061  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:33.061  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:33.070  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:46.052  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:46.052  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:46.052  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:45:55.477  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:14.060  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:14.065  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:14.081  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:19.565  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:19.565  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:19.582  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:23.059  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:23.060  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:23.378  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:29.308  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:30.055  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:46:30.055  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:02.067  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:02.069  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:02.069  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:02.764  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:03.058  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:03.058  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:10.569  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:11.052  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:11.052  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:23.105  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:23.110  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:23.112  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:31.698  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:32.053  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:32.053  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:53.748  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:54.071  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:47:54.107  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:01.326  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:02.058  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:02.058  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:05.728  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:06.047  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:06.047  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:09.076  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:10.191  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:10.191  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:13.101  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:14.051  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:14.051  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:17.474  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:18.044  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:18.045  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:22.056  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:22.056  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:22.058  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:30.057  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:30.132  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:30.158  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:32.050  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:32.054  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:32.054  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:33.873  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:34.083  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:34.098  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:45.075  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:45.075  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:45.082  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:47.062  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:47.062  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:47.376  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:49.840  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:50.067  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:50.079  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:56.418  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:57.063  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:48:57.068  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:00.596  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:01.053  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:01.053  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:09.229  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:10.058  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:10.058  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:14.664  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:15.045  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:15.045  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:19.358  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:20.045  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:20.045  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:37.440  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:38.282  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:38.282  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:43.790  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:44.053  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:49:44.054  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:20.430  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:21.051  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:21.051  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:24.072  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:24.072  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:24.072  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:32.051  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:32.051  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:32.056  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:33.698  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:34.058  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:34.059  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:47.021  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:47.079  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:47.079  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:54.382  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:55.377  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:55.377  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:50:59.757  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:51:00.051  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:51:00.051  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 11:55:22.267  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.UserController          : method removeRecipe in UserController used
+2022-06-30 11:55:25.804  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:55:47.672  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:55:51.574 ERROR 8564 --- [http-nio-8080-exec-4] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:55:51.906 ERROR 8564 --- [http-nio-8080-exec-5] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:55:52.237 ERROR 8564 --- [http-nio-8080-exec-7] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:57:02.864  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:57:06.275 ERROR 8564 --- [http-nio-8080-exec-4] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:57:06.590 ERROR 8564 --- [http-nio-8080-exec-5] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:57:06.919 ERROR 8564 --- [http-nio-8080-exec-7] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:58:09.965  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:58:12.732 ERROR 8564 --- [http-nio-8080-exec-8] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:58:13.057 ERROR 8564 --- [http-nio-8080-exec-2] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:58:13.376 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:59:36.851  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 11:59:37.831 ERROR 8564 --- [http-nio-8080-exec-2] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:59:38.153 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 11:59:38.482 ERROR 8564 --- [http-nio-8080-exec-3] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:01:44.636  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:01:47.404 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:01:47.728 ERROR 8564 --- [http-nio-8080-exec-3] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:01:48.051 ERROR 8564 --- [http-nio-8080-exec-8] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:02:15.718  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:02:17.452 ERROR 8564 --- [http-nio-8080-exec-3] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:02:17.780 ERROR 8564 --- [http-nio-8080-exec-8] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:02:18.107 ERROR 8564 --- [http-nio-8080-exec-2] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:02:45.704  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:02:49.803 ERROR 8564 --- [http-nio-8080-exec-8] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:02:50.136 ERROR 8564 --- [http-nio-8080-exec-2] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:02:50.456 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:02:56.120  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:03:10.512  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:03:20.192  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:03:22.925 ERROR 8564 --- [http-nio-8080-exec-4] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:03:23.247 ERROR 8564 --- [http-nio-8080-exec-5] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:03:23.572 ERROR 8564 --- [http-nio-8080-exec-10] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:03:26.793  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:06:12.648  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:06:14.329 ERROR 8564 --- [http-nio-8080-exec-3] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:06:14.659 ERROR 8564 --- [http-nio-8080-exec-9] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:06:14.986 ERROR 8564 --- [http-nio-8080-exec-4] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:07:46.789  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:07.763  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:10.531  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:12.476  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:13.403  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:14.400  INFO 8564 --- [http-nio-8080-exec-10] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:17.460  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:26.352  INFO 8564 --- [http-nio-8080-exec-8] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:35.167  INFO 8564 --- [http-nio-8080-exec-2] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:38.499  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:08:42.120  INFO 8564 --- [http-nio-8080-exec-9] c.e.c.Controller.RecipeController        : method getRecipeInfo in RecipeController used
+2022-06-30 12:09:39.688  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:09:50.241 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:09:50.485 ERROR 8564 --- [http-nio-8080-exec-10] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:09:50.571 ERROR 8564 --- [http-nio-8080-exec-6] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:09:55.238  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:11:55.432  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:11:57.043 ERROR 8564 --- [http-nio-8080-exec-7] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:11:57.359 ERROR 8564 --- [http-nio-8080-exec-5] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:11:57.682 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:12:22.662  INFO 8564 --- [http-nio-8080-exec-7] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:12:24.368 ERROR 8564 --- [http-nio-8080-exec-5] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:12:24.695 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:12:25.020 ERROR 8564 --- [http-nio-8080-exec-4] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:13:51.271  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:13:53.032 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:13:53.342 ERROR 8564 --- [http-nio-8080-exec-4] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:13:53.671 ERROR 8564 --- [http-nio-8080-exec-7] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:15:07.466  INFO 8564 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:15:10.226 ERROR 8564 --- [http-nio-8080-exec-4] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:15:10.551 ERROR 8564 --- [http-nio-8080-exec-7] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:15:10.872 ERROR 8564 --- [http-nio-8080-exec-5] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:15:38.765  INFO 8564 --- [http-nio-8080-exec-4] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:15:48.678 ERROR 8564 --- [http-nio-8080-exec-7] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:15:49.012 ERROR 8564 --- [http-nio-8080-exec-5] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:15:49.266 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:16:34.711  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:16:37.901 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:16:38.227 ERROR 8564 --- [http-nio-8080-exec-10] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:16:38.551 ERROR 8564 --- [http-nio-8080-exec-6] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:18:34.422 ERROR 8564 --- [http-nio-8080-exec-1] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:18:44.038  INFO 8564 --- [http-nio-8080-exec-6] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:18:46.318 ERROR 8564 --- [http-nio-8080-exec-5] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:18:46.640 ERROR 8564 --- [http-nio-8080-exec-8] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:18:46.961 ERROR 8564 --- [http-nio-8080-exec-2] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:25:09.254  INFO 8564 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:25:44.692  INFO 8564 --- [http-nio-8080-exec-3] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:31:16.923  INFO 8564 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 12:31:16.974  INFO 8564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-30 12:31:17.000  INFO 8564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-30 12:31:21.704  INFO 22220 --- [main] c.e.cookbuilder.CookBuilderApplication   : Starting CookBuilderApplication using Java 18.0.1.1 on Abdulrahman with PID 22220 (C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder\target\classes started by rah_b in C:\Users\rah_b\OneDrive\Desktop\backend\tempCookBuilder)
+2022-06-30 12:31:21.707  INFO 22220 --- [main] c.e.cookbuilder.CookBuilderApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-06-30 12:31:22.528  INFO 22220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-30 12:31:22.621  INFO 22220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 4 JPA repository interfaces.
+2022-06-30 12:31:23.162  INFO 22220 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-30 12:31:23.170  INFO 22220 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-30 12:31:23.170  INFO 22220 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-30 12:31:23.296  INFO 22220 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-30 12:31:23.296  INFO 22220 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1529 ms
+2022-06-30 12:31:23.494  INFO 22220 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-30 12:31:23.551  INFO 22220 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-30 12:31:23.734  INFO 22220 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-30 12:31:23.834  INFO 22220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-30 12:31:34.750  INFO 22220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-30 12:31:34.786  INFO 22220 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-06-30 12:31:39.272  WARN 22220 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table allergies add constraint FK8tbp98fmnxpsv3ai2wlrpx12k foreign key (user_id) references my_user (id)" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table allergies add constraint FK8tbp98fmnxpsv3ai2wlrpx12k foreign key (user_id) references my_user (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:452) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:263) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:196) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.example.cookbuilder.CookBuilderApplication.main(CookBuilderApplication.java:12) ~[classes/:na]
+Caused by: com.mysql.cj.jdbc.exceptions.MySQLQueryInterruptedException: foreign key constraints are not allowed, see https://vitess.io/blog/2021-06-15-online-ddl-why-no-fk/
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:126) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	... 33 common frames omitted
+
+2022-06-30 12:31:39.495  WARN 22220 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table favorite_cuisine add constraint FKf7snh11n6cywduku8vvddnf1p foreign key (user_id) references my_user (id)" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table favorite_cuisine add constraint FKf7snh11n6cywduku8vvddnf1p foreign key (user_id) references my_user (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:452) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:263) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:196) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.example.cookbuilder.CookBuilderApplication.main(CookBuilderApplication.java:12) ~[classes/:na]
+Caused by: com.mysql.cj.jdbc.exceptions.MySQLQueryInterruptedException: foreign key constraints are not allowed, see https://vitess.io/blog/2021-06-15-online-ddl-why-no-fk/
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:126) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	... 33 common frames omitted
+
+2022-06-30 12:31:39.856  WARN 22220 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table favorite_recipe add constraint FKarj0o59q0csxykdwmxsyk39f6 foreign key (user_id) references my_user (id)" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table favorite_recipe add constraint FKarj0o59q0csxykdwmxsyk39f6 foreign key (user_id) references my_user (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:452) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:263) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:196) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.0.jar:2.7.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.0.jar:2.7.0]
+	at com.example.cookbuilder.CookBuilderApplication.main(CookBuilderApplication.java:12) ~[classes/:na]
+Caused by: com.mysql.cj.jdbc.exceptions.MySQLQueryInterruptedException: foreign key constraints are not allowed, see https://vitess.io/blog/2021-06-15-online-ddl-why-no-fk/
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:126) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648) ~[mysql-connector-java-8.0.29.jar:8.0.29]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.9.Final.jar:5.6.9.Final]
+	... 33 common frames omitted
+
+2022-06-30 12:31:39.864  INFO 22220 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-30 12:31:39.881  INFO 22220 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 12:31:40.717  WARN 22220 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-30 12:31:41.238  INFO 22220 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@361d8567, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3fd6dfbc, org.springframework.security.web.context.SecurityContextPersistenceFilter@47c356e, org.springframework.security.web.header.HeaderWriterFilter@37cc6017, org.springframework.web.filter.CorsFilter@4023d23f, org.springframework.security.web.authentication.logout.LogoutFilter@1b06dc57, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@53d2b827, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b80b41d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50e0b472, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@402676e3, org.springframework.security.web.session.SessionManagementFilter@7e7391e8, org.springframework.security.web.access.ExceptionTranslationFilter@1c681761, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@488279d3]
+2022-06-30 12:31:41.919  INFO 22220 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-30 12:31:41.938  INFO 22220 --- [main] c.e.cookbuilder.CookBuilderApplication   : Started CookBuilderApplication in 20.723 seconds (JVM running for 21.959)
+2022-06-30 12:32:11.258  INFO 22220 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-30 12:32:11.260  INFO 22220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-06-30 12:32:11.263  INFO 22220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-06-30 12:32:11.368  INFO 22220 --- [http-nio-8080-exec-1] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:32:12.281 ERROR 22220 --- [http-nio-8080-exec-2] c.e.c.Advice.ControllerAdviseHandler     : UserNotFoundException was triggered
+2022-06-30 12:32:37.129  INFO 22220 --- [http-nio-8080-exec-7] c.e.c.Controller.UserController          : method addUser in UserController used
+2022-06-30 12:33:11.779  INFO 22220 --- [http-nio-8080-exec-5] c.e.c.Controller.RecipeController        : method loadHomePageRecipe in RecipeController used
+2022-06-30 12:34:11.546  INFO 22220 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-30 12:34:11.546  INFO 22220 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-30 12:34:14.909  INFO 22220 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
