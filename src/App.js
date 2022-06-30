@@ -1,4 +1,4 @@
-import React from 'react';
+import {useContext} from 'react';
 import {
   ChakraProvider,
   Box,
@@ -20,19 +20,27 @@ import { SearchPage } from './pages/SearchPage';
 import { SearchResult } from './pages/SearchResult';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import { Profile } from './pages/Profile';
+import RecipeContext from './context/RecipeContext';
+import RequireAuth from './components/RequireAuth';
 
 function App() {
+
   return (
     <ChakraProvider theme={theme}>
       <BrowserRouter>
       <Navbar></Navbar>
       <Routes>
-        <Route path='/' element={<Home></Home>} />
+        
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
+        <Route element={<RequireAuth/>}>
+        <Route path='/' element={<Home></Home>} />
         <Route path='/recipe/:id' element={<RecipePage/>}/>
         <Route path='/search' element={<SearchPage/>}/>
         <Route path='/result' element={<SearchResult/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        </Route>
       </Routes>
       </BrowserRouter>
     </ChakraProvider>

@@ -1,10 +1,12 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLogged, setIsLogged] = useState(localStorage.getItem('loggedIn'));
-
+  const [loggedUser,setLoggedUser] = useState(localStorage.getItem('username'));
+  const[loggedID,setLoggedID] = useState(false)
+  const [userID,setUserID] = useState('');
   const login = async (username, password) => {
     try {
       const request = await fetch('/api/v1/auth/login', {
@@ -13,9 +15,8 @@ export const AuthProvider = ({ children }) => {
         },
         method: 'POST',
       });
-
       const data = await request.json();
-
+      console.log(data);
       if (request.status === 401) {
         return false;
       }
@@ -27,16 +28,25 @@ export const AuthProvider = ({ children }) => {
       console.log(e);
       return false;
     }
+    
   };
 
-  const register = async (username, password) => {
+  useEffect(()=> {
+    const setID = async()=> {
+      const request = await fetch('/api/v1/auth/userinfo/' + loggedUser);
+      const data = await request.json();
+      setUserID(data.id);
+    }
+    setID()
+  },loggedID)
+  const register = async (username,email, password) => {
     try {
       const request = await fetch('/api/v1/auth/register', {
         headers: {
           'Content-Type': 'application/json',
         },
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username,email, password }),
       });
       const data = await request.json();
 
@@ -59,18 +69,20 @@ export const AuthProvider = ({ children }) => {
   const removeIsLogged = () => {
     setIsLogged(null);
     localStorage.removeItem('loggedIn');
+    localStorage.removeItem('username')
   };
 
   const logout = async () => {
     const request = await fetch('/api/v1/auth/logout');
     if (request.status === 204) {
+      setLoggedUser(null)
       return true;
     }
   };
 
   return (
     <AuthContext.Provider
-      value={{ login, register, isLogged, addIsLogged, removeIsLogged, logout }}
+      value={{ login, register, isLogged, addIsLogged, removeIsLogged, logout,loggedUser,setLoggedUser,userID,setUserID ,setLoggedID}}
     >
       {children}
     </AuthContext.Provider>

@@ -104,7 +104,6 @@ export const SearchPage = () => {
         placeholder="Select option"
       >
         <option value="byIngredient">Search by Ingredient</option>
-        <option value="byNutrients">Search by Nutrients</option>
         <option value="byCuisine">Search by Cuisine</option>
       </Select>
       <>
@@ -146,9 +145,6 @@ export const SearchPage = () => {
                 </Flex>
               </div>
             );
-          }
-          if (optionByNutrients) {
-            return <Text>optionByNutrients</Text>;
           }
           if (optionByCuisine) {
             return (

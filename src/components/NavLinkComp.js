@@ -17,7 +17,6 @@ import {
     Stack,
   } from '@chakra-ui/react';
 export const NavLinkComp = ({children,toValue}) => {
-  console.log(children);
   return (
     <Link
     px={2}

@@ -13,7 +13,8 @@ import {
   Image,
   GridItem,
   Container,
-  Button
+  Button,
+  SimpleGrid
 } from '@chakra-ui/react';
 import { Navigate,useParams,Link  } from "react-router-dom";
 import RecipeContext from '../context/RecipeContext';
@@ -28,7 +29,9 @@ export const RecipeCard = () => {
     
     <VStack>
         <Container maxW='5xl'>
-      <Grid mt={'35rem'} gap={5}  templateColumns='repeat(4, 1fr)'>
+      {/* <Grid mt={['600%','30px']} gap={5}  templateColumns={['repeat(2)','repeat(2)','repeat(3)']}> */}
+      <SimpleGrid columns={[2,4]} spacing={10}>
+
         {recipes.map((recipe, index) => {
           return (
             <GridItem w="100%" mb={'13px'} key={index}>
@@ -43,7 +46,8 @@ export const RecipeCard = () => {
             </GridItem>
           );
         })}
-      </Grid>
+        </SimpleGrid>
+      {/* </Grid> */}
       </Container>
     </VStack>
     

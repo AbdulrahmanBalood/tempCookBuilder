@@ -15,14 +15,48 @@ import {
   Stack,
   Text
 } from '@chakra-ui/react';
+import React, { useContext } from 'react';
 import { NavLinkComp } from './NavLinkComp';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
 import profile from '../images/profile.png'
+import AuthContext from '../context/AuthContext';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
+  const Navigate = useNavigate();
   const Links = [{lable:'Search',value:"/search"}];
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { logout, removeIsLogged,isLogged } = useContext(AuthContext);
+  let menuListItems = ()=> {
+    if(isLogged){
+      return(
+        <>
+  <MenuItem onClick={()=> {
+    Navigate("/profile")
+  }}>Profile</MenuItem>
+  <MenuDivider />
+  <MenuItem onClick={()=> {
+    const isLoggedOut = logout()
+    if(isLoggedOut){
+      removeIsLogged();
+      Navigate('/')
+    }
+  }}>Logout</MenuItem>
+        </>
+      )
+    }else {
+      return(
+      <>
+  <MenuItem onClick={()=> {
+     Navigate('/login')
+  }}>Login</MenuItem>
+  <MenuItem  onClick={()=> {
+     Navigate('/register')
+  }}>Register</MenuItem>
+      </>)
+    }
+  }
   return (
     <>
       <Box bg={useColorModeValue('green.400')} px={4}>
@@ -71,12 +105,12 @@ export const Navbar = () => {
                 />
               </MenuButton>
               <MenuList>
-                {/* Navigate here  and conditional*/}
-                {/* //////////////////////////////////////////////////////////////////////// */}
-                <MenuItem>Settings</MenuItem>
-                <MenuItem>Profile</MenuItem>
-                <MenuDivider />
-                <MenuItem>Logout</MenuItem>
+    
+                <>
+                {menuListItems()}
+                </>
+
+                
               </MenuList>
             </Menu>
           </Flex>
@@ -85,8 +119,8 @@ export const Navbar = () => {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack color={'white'} as={'nav'} spacing={4}>
-              {Links.map(link => (
-                <NavLinkComp key={link}>{link}</NavLinkComp>
+              {Links.map((link,index) => (
+                  <NavLinkComp toValue = {link.value} key={index}>{link.lable}</NavLinkComp>
               ))}
             </Stack>
           </Box>

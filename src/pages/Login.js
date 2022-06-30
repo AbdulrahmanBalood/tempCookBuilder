@@ -13,25 +13,27 @@ import {
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 
-const Login = ({ setLoggedIn, loggedIn }) => {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const { login, addIsLogged } = useContext(AuthContext);
+  const { login, addIsLogged,setLoggedID } = useContext(AuthContext);
 
   const onClick = async () => {
     const loginResult = await login(username, password);
     if (loginResult) {
       addIsLogged();
-      navigate('/dashboard');
+      
+      localStorage.setItem('username',username)
+      setLoggedID(true)
+      // navigate('/');
     }
   };
 
-  // console.log(login);
 
   if (localStorage.getItem('loggedIn')) {
-    return <Navigate to="/dashboard" />;
+    return <Navigate to="/" />;
   }
 
   return (
