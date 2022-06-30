@@ -15,19 +15,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import java.util.*;
 
- @NoArgsConstructor @Setter @Getter
+ @AllArgsConstructor @NoArgsConstructor @Setter @Getter
 @Entity
 public class MyUser implements UserDetails {
-     public MyUser(Integer id, String username, String password, String role, List<FavoriteRecipe> favoriteRecipes, List<Allergies> allergies, List<FavoriteCuisine> favoriteCuisines) {
-         this.id = id;
-         this.username = username;
-//         this.email = email;
-         this.password = password;
-         this.role = "USER";
-         this.favoriteRecipes = favoriteRecipes;
-         this.allergies = allergies;
-         this.favoriteCuisines = favoriteCuisines;
-     }
 
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,12 +26,12 @@ public class MyUser implements UserDetails {
     @NotEmpty(message = "Username cannot be empty")
     private String username;
     @Column(unique = true)
-//    @Email(message = "Email must be in an email format")
-//    @NotEmpty(message = "email cannot be empty")
-//    private String email;
+    @Email(message = "Email must be in an email format")
+    @NotEmpty(message = "email cannot be empty")
+    private String email;
     @NotEmpty(message = "password cannot be empty")
     private String password;
-    private String role;
+    private String role = "USER";
 
         @OneToMany(mappedBy = "user")
     private List<FavoriteRecipe> favoriteRecipes;

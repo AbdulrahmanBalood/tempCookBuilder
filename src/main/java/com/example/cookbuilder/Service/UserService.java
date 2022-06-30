@@ -40,14 +40,14 @@ public class UserService {
         MyUser user = userRepository.getMyUserByEmail(email);
         return user;
     }
-//    public void updateUser(UpdateUserDTO updateUserDTO){
-//        MyUser user = getUserByEmail(updateUserDTO.getCurrentEmail());
-//        user.setUsername(updateUserDTO.getUsername());
-////        user.setEmail(updateUserDTO.getEmail());
-//        String hashPass = new BCryptPasswordEncoder().encode(user.getPassword());
-//        user.setPassword(hashPass);
-//        userRepository.save(user);
-//    }
+    public void updateUser(UpdateUserDTO updateUserDTO){
+        MyUser user = getUserByEmail(updateUserDTO.getCurrentEmail());
+        user.setUsername(updateUserDTO.getUsername());
+//        user.setEmail(updateUserDTO.getEmail());
+        String hashPass = new BCryptPasswordEncoder().encode(user.getPassword());
+        user.setPassword(hashPass);
+        userRepository.save(user);
+    }
     public void deleteUser(Integer userID){
         MyUser user = getUserByID(userID);
         userRepository.delete(user);
@@ -57,9 +57,14 @@ public class UserService {
             throw new UserNotFoundException("User doesn't exist");
         });
     }
-    public void addFavRecipe(Integer userID,Integer recipeID){
+    public MyUser getUserByUsername(String username){
+        return userRepository.findMyUserByUsername(username).orElseThrow(()->{
+            throw new UserNotFoundException("User doesn't exist");
+        });
+    }
+    public void addFavRecipe(Integer userID,Integer recipeID,String recipeName){
         MyUser user = getUserByID(userID);
-        FavoriteRecipe favoriteRecipe = new FavoriteRecipe(null,recipeID,user);
+        FavoriteRecipe favoriteRecipe = new FavoriteRecipe(null,recipeID,recipeName,user);
         List<FavoriteRecipe> favoriteRecipeSet = user.getFavoriteRecipes();
         if(favoriteRecipeSet == null){
             favoriteRecipeSet = new ArrayList<>();

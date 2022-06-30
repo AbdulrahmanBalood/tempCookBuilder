@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -25,7 +24,7 @@ public class UserController {
     private final UserService userService;
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @GetMapping("/admin/getusers")
+    @GetMapping("/getusers")
 
     public ResponseEntity<List<MyUser>> getUsers(){
         logger.info("method getUsers in UserController used");
@@ -38,22 +37,30 @@ public class UserController {
         userService.addUser(user);
         return ResponseEntity.status(201).body(new ResponseAPI("User added",201));
     }
-//    @PutMapping("/admin/updateuser")
-//    public ResponseEntity<ResponseAPI> updateUser(@RequestBody @Valid UpdateUserDTO updateUserDTO){
-//        logger.info("method updateUser in UserController used");
-//        userService.updateUser(updateUserDTO);
-//        return ResponseEntity.status(201).body(new ResponseAPI("User updated",201));
-//    }
+    @PostMapping("/login")
+    public ResponseEntity<?> login(){
+        return ResponseEntity.status(200).body(new ResponseAPI("Welcome back",200));
+    }
+    @GetMapping("/userinfo/{username}")
+    public ResponseEntity<MyUser> getUserInfo(@PathVariable String username){
+        return ResponseEntity.status(200).body(userService.getUserByUsername(username));
+    }
+    @PutMapping("/admin/updateuser")
+    public ResponseEntity<ResponseAPI> updateUser(@RequestBody @Valid UpdateUserDTO updateUserDTO){
+        logger.info("method updateUser in UserController used");
+        userService.updateUser(updateUserDTO);
+        return ResponseEntity.status(201).body(new ResponseAPI("User updated",201));
+    }
     @DeleteMapping("/admin/deleteuser/{userID}")
     public ResponseEntity<ResponseAPI> deleteUser(@PathVariable Integer userID){
         logger.info("method deleteUser in UserController used");
         userService.deleteUser(userID);
         return ResponseEntity.status(201).body(new ResponseAPI("User deleted",201));
     }
-    @PutMapping("/userrecipe/favrecipe/{userID}/{recipeID}")
-    public ResponseEntity<ResponseAPI> addFavRecipe(@PathVariable Integer userID,@PathVariable Integer recipeID){
+    @PutMapping("/userrecipe/favrecipe/{userID}/{recipeID}/{recipeName}")
+    public ResponseEntity<ResponseAPI> addFavRecipe(@PathVariable Integer userID,@PathVariable Integer recipeID,@PathVariable String recipeName){
         logger.info("method addFavRecipe in UserController used");
-        userService.addFavRecipe(userID,recipeID);
+        userService.addFavRecipe(userID,recipeID,recipeName);
         return ResponseEntity.status(200).body(new ResponseAPI("New Favorite recipe added",200));
     }
     @PutMapping("/userrecipe/removerecipe/{userID}/{recipeID}")

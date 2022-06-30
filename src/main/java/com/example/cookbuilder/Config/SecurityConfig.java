@@ -30,19 +30,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(myUserDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
-
+    //                .antMatchers(HttpMethod.POST,"/api/v1/auth/register").permitAll()//define methods
+    //                .antMatchers("/api/v1/auth/admin/**").hasAuthority("ADMIN")
+//                .antMatchers("/api/v1/auth/userrecipe/**").hasAnyAuthority("ADMIN","USER")
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.POST,"/api/v1/auth/register").permitAll()//define methods
-                .antMatchers("/api/v1/auth/admin/**").hasAuthority("ADMIN")
-                .antMatchers("/api/v1/auth/userrecipe/**").hasAnyAuthority("ADMIN","USER")
-                .antMatchers("/api/v1/recipe/user/**").permitAll()//Change //@PreAuthorize("hasAnyAuthority()") to has anyRole, to define the Authorities of the user
-                .antMatchers("/api/v1/recipe/recipes/**").permitAll()
+        http.csrf().disable().cors().configurationSource(corsConfigurationSource()).and().authorizeRequests()
+
+//                .antMatchers("/api/v1/**").hasAnyAuthority("ADMIN","USER")
+               .antMatchers("/api/v1/auth/**").hasAnyAuthority("ADMIN","USER")
+              .antMatchers("/api/v1/auth/**").hasAnyAuthority("ADMIN","USER")
                 .anyRequest().authenticated()
-                .and().formLogin()
                 .and().logout().logoutUrl("/api/v1/auth/logout")
-                .clearAuthentication(true)
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
                 .and().httpBasic();

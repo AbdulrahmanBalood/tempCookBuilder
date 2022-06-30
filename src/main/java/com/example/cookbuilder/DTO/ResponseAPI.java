@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @AllArgsConstructor @Data
-public class ResponseAPI {
-    private String message;
+public class ResponseAPI<T> {
+    private T message;
     private Integer statusCode;
 }

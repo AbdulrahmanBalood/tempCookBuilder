@@ -9,15 +9,15 @@ import javax.validation.constraints.NotEmpty;
 
 @AllArgsConstructor @Data
 public class UpdateUserDTO {
-//    @Email(message = "Email must be in an email format")
-//    @NotEmpty(message = "currentEmail cannot be null")
-//    private String currentEmail;
+    @Email(message = "Email must be in an email format")
+    @NotEmpty(message = "currentEmail cannot be null")
+    private String currentEmail;
     @NotEmpty(message = "Username cannot be empty")
     private String username;
     @Column(unique = true)
-//    @Email(message = "Email must be in an email format")
-//    @NotEmpty(message = "email cannot be empty")
-//    private String email;
+    @Email(message = "Email must be in an email format")
+    @NotEmpty(message = "email cannot be empty")
+    private String email;
     @NotEmpty(message = "password cannot be empty")
     private String password;
 
