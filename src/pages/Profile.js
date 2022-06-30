@@ -93,7 +93,7 @@ export const Profile = () => {
         <Container>
           <Text fontSize="6xl">Welcome {loggedUser}</Text>
           <TableContainer>
-            <Table variant="striped" colorScheme="green">
+            <Table variant="striped" colorScheme="green" >
               <Thead>
                 <Tr>
                   <Th>Recipe</Th>

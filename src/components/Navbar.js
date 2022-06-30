@@ -18,10 +18,9 @@ import {
 import React, { useContext } from 'react';
 import { NavLinkComp } from './NavLinkComp';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { Link } from 'react-router-dom';
 import profile from '../images/profile.png'
 import AuthContext from '../context/AuthContext';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate ,Link} from 'react-router-dom';
 
 export const Navbar = () => {
   const Navigate = useNavigate();

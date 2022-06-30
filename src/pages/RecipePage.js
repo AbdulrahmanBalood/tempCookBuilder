@@ -42,7 +42,9 @@ export const RecipePage = () => {
     const getRecipe = async () => {
       const request = await fetch(
         `/api/v1/recipe/user/getrecipeinfo/${id.id}`
+        
       );
+      console.log(`/api/v1/recipe/user/getrecipeinfo/${id.id}`);
       const data = await request.json();
       setRecipe(data);
       
@@ -96,7 +98,7 @@ const favoriteOnClick = () => {
             {diet.map((diet,index)=> {
               
               return(
-                <Badge  key={index} colorScheme="green"><Link onClick={() => {
+                <Badge  key={index} colorScheme="green"><button onClick={() => {
                     let url = "/api/v1/recipe/recipes/findbydiet/"+diet
                     console.log(diet);
                     newUrl = url.replace(/ /g,'%20')
@@ -104,7 +106,7 @@ const favoriteOnClick = () => {
                     setSearchUrl(newUrl)
                     setSearchType("ByDiet")
                     Navigate('/result')
-                  }}>{diet}</Link></Badge>
+                  }}>{diet}</button></Badge>
               )
             })}
     

@@ -25,16 +25,13 @@ export const RecipeCard = () => {
 
 
   return (
-    <Flex justifyContent={'center'} alignItems="center" height={'100vh'}>
     
-    <VStack>
-        <Container maxW='5xl'>
-      {/* <Grid mt={['600%','30px']} gap={5}  templateColumns={['repeat(2)','repeat(2)','repeat(3)']}> */}
+        <Container height={['40rem','40rem']} maxW='6xl'>
       <SimpleGrid columns={[2,4]} spacing={10}>
 
         {recipes.map((recipe, index) => {
           return (
-            <GridItem w="100%" mb={'13px'} key={index}>
+            <GridItem key={index}>
               <Image
                 borderRadius="full"
                 boxSize="150px"
@@ -47,10 +44,7 @@ export const RecipeCard = () => {
           );
         })}
         </SimpleGrid>
-      {/* </Grid> */}
       </Container>
-    </VStack>
     
-  </Flex>
   )
 }
